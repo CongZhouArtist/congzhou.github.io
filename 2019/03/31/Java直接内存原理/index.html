@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="Java笔记,">
 
 
 
@@ -80,20 +80,21 @@
 
 
 <meta name="description" content="直接内存上述对直接内存的描述来自《深入理解Java虚拟机》，写明了直接内存不在java堆内，并且java堆内存往外写需要拷贝到native堆。 然后咱们先写个代码看看直接内存分配在哪个区域12345678910111213141516171819import java.nio.ByteBuffer;import java.util.ArrayList;import java.util.List;/">
+<meta name="keywords" content="Java笔记">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java直接内存原理">
 <meta property="og:url" content="http://yoursite.com/2019/03/31/Java直接内存原理/index.html">
 <meta property="og:site_name" content="Java笔记">
 <meta property="og:description" content="直接内存上述对直接内存的描述来自《深入理解Java虚拟机》，写明了直接内存不在java堆内，并且java堆内存往外写需要拷贝到native堆。 然后咱们先写个代码看看直接内存分配在哪个区域12345678910111213141516171819import java.nio.ByteBuffer;import java.util.ArrayList;import java.util.List;/">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20190220211915519.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3p4Y2MxMzE0,size_16,color_FFFFFF,t_70 =600x">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20190220205725647.png =600x">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20190222194320267.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3p4Y2MxMzE0,size_16,color_FFFFFF,t_70 =800x">
-<meta property="og:updated_time" content="2019-03-31T11:32:52.539Z">
+<meta property="og:image" content="http://yoursite.com/2019/03/31/Java直接内存原理/20190220211915519.png">
+<meta property="og:image" content="http://yoursite.com/2019/03/31/Java直接内存原理/20190220205725647.png">
+<meta property="og:image" content="http://yoursite.com/2019/03/31/Java直接内存原理/20190222194320267.png">
+<meta property="og:updated_time" content="2019-03-31T11:53:11.684Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java直接内存原理">
 <meta name="twitter:description" content="直接内存上述对直接内存的描述来自《深入理解Java虚拟机》，写明了直接内存不在java堆内，并且java堆内存往外写需要拷贝到native堆。 然后咱们先写个代码看看直接内存分配在哪个区域12345678910111213141516171819import java.nio.ByteBuffer;import java.util.ArrayList;import java.util.List;/">
-<meta name="twitter:image" content="https://img-blog.csdnimg.cn/20190220211915519.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3p4Y2MxMzE0,size_16,color_FFFFFF,t_70 =600x">
+<meta name="twitter:image" content="http://yoursite.com/2019/03/31/Java直接内存原理/20190220211915519.png">
 
 
 
@@ -265,7 +266,7 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-31T19:32:29+08:00">
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-31T19:50:27+08:00">
                 2019-03-31
               </time>
             
@@ -303,9 +304,9 @@
       
 
       
-        <h2 id="直接内存"><a href="#直接内存" class="headerlink" title="直接内存"></a>直接内存</h2><p><img src="https://img-blog.csdnimg.cn/20190220211915519.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3p4Y2MxMzE0,size_16,color_FFFFFF,t_70 =600x" alt="在这里插入图片描述"><img src="https://img-blog.csdnimg.cn/20190220205725647.png =600x" alt="在这里插入图片描述"><br>上述对直接内存的描述来自《深入理解Java虚拟机》，写明了直接内存不在java堆内，并且java堆内存往外写需要拷贝到native堆。</p>
+        <h2 id="直接内存"><a href="#直接内存" class="headerlink" title="直接内存"></a>直接内存</h2><p><img src="/2019/03/31/Java直接内存原理/20190220211915519.png" alt="在这里插入图片描述"><img src="/2019/03/31/Java直接内存原理/20190220205725647.png" alt="在这里插入图片描述"><br>上述对直接内存的描述来自《深入理解Java虚拟机》，写明了直接内存不在java堆内，并且java堆内存往外写需要拷贝到native堆。</p>
 <h3 id="然后咱们先写个代码看看直接内存分配在哪个区域"><a href="#然后咱们先写个代码看看直接内存分配在哪个区域" class="headerlink" title="然后咱们先写个代码看看直接内存分配在哪个区域"></a>然后咱们先写个代码看看直接内存分配在哪个区域</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.nio.ByteBuffer;</span><br><span class="line"><span class="keyword">import</span> java.util.ArrayList;</span><br><span class="line"><span class="keyword">import</span> java.util.List;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> congzhou</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@description</span>:</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@date</span>: Created in 2019/2/19 21:57</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">NativeHeapTest</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> InterruptedException </span>&#123;</span><br><span class="line">        List&lt;ByteBuffer&gt; byteBufferList = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">        <span class="keyword">while</span> (<span class="keyword">true</span>) &#123;</span><br><span class="line">            ByteBuffer byteBuffer = ByteBuffer.allocateDirect(<span class="number">10240</span>);</span><br><span class="line">            byteBufferList.add(byteBuffer);</span><br><span class="line">            Thread.sleep(<span class="number">100</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>watch命令观察变化内存<br><img src="https://img-blog.csdnimg.cn/20190222194320267.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3p4Y2MxMzE0,size_16,color_FFFFFF,t_70 =800x" alt="在这里插入图片描述"><br>我使用的是64位centos7，虚拟地址&lt;00007fffffffffff 是用户空间内存[1]。ByteBuffer.allocateDirect()分配的是用户空间的匿名内存。</p>
+<p>watch命令观察变化内存<br><img src="/2019/03/31/Java直接内存原理/20190222194320267.png" alt="在这里插入图片描述"><br>我使用的是64位centos7，虚拟地址&lt;00007fffffffffff 是用户空间内存[1]。ByteBuffer.allocateDirect()分配的是用户空间的匿名内存。</p>
 <h3 id="再来看一下ByteBuffer-allocateDirect-int-capacity"><a href="#再来看一下ByteBuffer-allocateDirect-int-capacity" class="headerlink" title="再来看一下ByteBuffer.allocateDirect(int capacity)"></a>再来看一下ByteBuffer.allocateDirect(int capacity)</h3><p>ByteBuffer.allocateDirect调用了Unsafe.allocateMemory(long var1)，该方法是个native方法<br><a href="https://github.com/unofficial-openjdk/openjdk/blob/jdk/jdk/src/hotspot/share/prims/unsafe.cpp" target="_blank" rel="noopener">https://github.com/unofficial-openjdk/openjdk/blob/jdk/jdk/src/hotspot/share/prims/unsafe.cpp</a><br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">UNSAFE_ENTRY(jlong, Unsafe_AllocateMemory0(JNIEnv *env, jobject unsafe, jlong size)) &#123;</span><br><span class="line">  <span class="keyword">size_t</span> sz = (<span class="keyword">size_t</span>)size;</span><br><span class="line"></span><br><span class="line">  sz = align_up(sz, HeapWordSize);</span><br><span class="line">  <span class="keyword">void</span>* x = os::<span class="built_in">malloc</span>(sz, mtOther);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> addr_to_java(x);</span><br><span class="line">&#125; UNSAFE_END</span><br></pre></td></tr></table></figure></p>
 <p>主要就是os::malloc(sz, mtInternal)方法，该方法封装了C++的标准库std::malloc()<br><a href="https://github.com/unofficial-openjdk/openjdk/blob/jdk/jdk/src/hotspot/share/runtime/os.cpp" target="_blank" rel="noopener">https://github.com/unofficial-openjdk/openjdk/blob/jdk/jdk/src/hotspot/share/runtime/os.cpp</a><br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">void</span>* os::<span class="built_in">malloc</span>(<span class="keyword">size_t</span> size, MEMFLAGS flags) &#123;</span><br><span class="line">  <span class="keyword">return</span> os::<span class="built_in">malloc</span>(size, flags, CALLER_PC);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">void</span>* os::<span class="built_in">malloc</span>(<span class="keyword">size_t</span> size, MEMFLAGS memflags, <span class="keyword">const</span> NativeCallStack&amp; <span class="built_in">stack</span>) &#123;</span><br><span class="line"><span class="comment">/*省略代码*/</span></span><br><span class="line">  u_char* ptr;</span><br><span class="line">  ptr = (u_char*)::<span class="built_in">malloc</span>(alloc_size);</span><br><span class="line"><span class="comment">/*省略代码*/</span></span><br><span class="line">  <span class="comment">// we do not track guard memory</span></span><br><span class="line">  <span class="keyword">return</span> MemTracker::record_malloc((address)ptr, size, memflags, <span class="built_in">stack</span>, level);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>(u_char*)::malloc(alloc_size)就是C++标准库函数，传入空间大小返回内存地址。</p>
@@ -327,6 +328,12 @@
     
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Java笔记/" rel="tag"># Java笔记</a>
+          
+        </div>
       
 
       
@@ -430,6 +437,15 @@
 
             
 
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-name">tags</span>
+                
+              </div>
             
 
           </nav>
